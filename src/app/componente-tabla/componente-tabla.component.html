@@ -1,0 +1,28 @@
+<button
+  [ngClass]="{'mostrar': !isDisplay, 'ocultar': isDisplay}"
+  mat-raised-button (click)="displayTable()">
+  {{isDisplay ? 'Ocultar Tabla' : 'Mostrar Tabla'}}
+</button>
+
+
+<div class="example-container mat-elevation-z8" *ngIf="isDisplay">
+  <mat-table  class="cabecera" #table [dataSource]="productos">
+
+    <ng-container matColumnDef="nombre">
+      <mat-header-cell  *matHeaderCellDef> Nombre </mat-header-cell>
+      <mat-cell class="fila" *matCellDef="let producto"> {{producto.nombre}} </mat-cell>
+    </ng-container>
+
+    <ng-container  matColumnDef="costo">
+      <mat-header-cell  *matHeaderCellDef> Costo </mat-header-cell>
+      <mat-cell class="fila" *matCellDef="let producto"> {{producto.costo | currency}} </mat-cell>
+    </ng-container>
+
+
+    <mat-header-row  *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row  class="registros" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
+
+
+

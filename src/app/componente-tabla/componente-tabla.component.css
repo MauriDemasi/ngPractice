@@ -1,0 +1,40 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 400px;
+  max-width: 450px;
+
+}
+
+.cabecera {
+  background-color: rgb(34, 33, 33);
+  cursor: pointer;
+}
+
+
+.mostrar {
+  display: flex;
+  flex-direction: column;
+  border: 4px greenyellow dotted;
+  margin-bottom: 10px;
+}
+
+.ocultar {
+  display: flex;
+  flex-direction: column;
+  border: 4px red dotted;
+  margin-bottom: 10px;
+}
+
+.registros {
+  font-size: xx-large;
+  background-color: rgb(151, 66, 66);
+}
+
+.fila:hover{
+  background-color: yellowgreen;
+  color: rgb(245, 248, 56);
+  font-size: large;
+}
+
+
