@@ -6,18 +6,24 @@
 
 
 <div class="example-container mat-elevation-z8" *ngIf="isDisplay">
-  <mat-table  class="cabecera" #table [dataSource]="productos">
+  <mat-table  class="cabecera" #table [dataSource]="users">
 
     <ng-container matColumnDef="nombre">
       <mat-header-cell  *matHeaderCellDef> Nombre </mat-header-cell>
-      <mat-cell class="fila" *matCellDef="let producto"> {{producto.nombre}} </mat-cell>
+      <mat-cell class="fila" *matCellDef="let user"> {{user.first_name}} </mat-cell>
     </ng-container>
 
-    <ng-container  matColumnDef="costo">
-      <mat-header-cell  *matHeaderCellDef> Costo </mat-header-cell>
-      <mat-cell class="fila" *matCellDef="let producto"> {{producto.costo | currency}} </mat-cell>
+
+    <ng-container matColumnDef="apellido">
+      <mat-header-cell  *matHeaderCellDef> Apellido </mat-header-cell>
+      <mat-cell class="fila" *matCellDef="let user"> {{user.last_name}} </mat-cell>
     </ng-container>
 
+
+    <ng-container matColumnDef="email">
+      <mat-header-cell  *matHeaderCellDef> Email </mat-header-cell>
+      <mat-cell class="fila" *matCellDef="let user"> {{user.email}} </mat-cell>
+    </ng-container>
 
     <mat-header-row  *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row  class="registros" *matRowDef="let row; columns: displayedColumns;"></mat-row>
